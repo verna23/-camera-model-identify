@@ -26,25 +26,11 @@ def get_links_from_yandex(search_url, total_pages):
 
 
 models1 = {
-    'iPhone-4s': ('https://fotki.yandex.ru/search.xml?grouping=off&text=iPhone%204s&type=model&&p={}', 128),
-    'iPhone-6': ('https://fotki.yandex.ru/search.xml?text=iPhone 6&type=model&&p={}', 128),
-    'Sony-NEX-7' : ('https://fotki.yandex.ru/search.xml?text=Sony%20NEX%207&type=model&&p={}', 128),
-    'Samsung-Galaxy-S4' : ('https://fotki.yandex.ru/search.xml?text=Samsung%20galaxy%20s4&type=model&&p={}', 128),
-    'Samsung-Galaxy-Note3' : ('https://fotki.yandex.ru/search.xml?text=Samsung%20galaxy%20note%203&type=model&&p={}', 128),
-    'Motorola-X' : ('https://fotki.yandex.ru/search.xml?text=Motorola%20Droid%20X&type=model&&p={}', 17),
-    'Motorola-Nexus-6': ('https://fotki.yandex.ru/search.xml?text=Motorola%20Nexus%206&type=model&&p={}', 128),
-    'Motorola-Droid-Maxx-1060' : ('https://fotki.yandex.ru/search.xml?text=Motorola%20XT1060&type=model&&p={}', 9),
-    'Motorola-Droid-Maxx-1080' : ('https://fotki.yandex.ru/search.xml?text=Motorola%20XT1080&type=model&&p={}', 48)
+    'iPhone'
+    'samsug galaxy'
+    'realme'
 }
 
-models2 = {
-    'Motorola-X-1052' : ('https://fotki.yandex.ru/search.xml?text=motorola%20XT%201052&type=model&&p={}', 43),
-    'Motorola-X-1053' : ('https://fotki.yandex.ru/search.xml?text=motorola%20XT%201053&type=model&&p={}', 16),
-    'Motorola-X-1055' : ('https://fotki.yandex.ru/search.xml?text=motorola%20XT%201055&type=model&&p={}', 2),
-    'Motorola-X-1056' : ('https://fotki.yandex.ru/search.xml?text=motorola%20XT%201056&type=model&&p={}', 128),
-    'Motorola-X-1058' : ('https://fotki.yandex.ru/search.xml?text=motorola%20XT%201058&type=model&&p=26', 27),
-    
-}
 
 path = 'files/{}/'
 for model, conf in models1.items():
