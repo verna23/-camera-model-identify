@@ -10,83 +10,28 @@ import tqdm
 from PIL import Image, ExifTags
 
 CLASSES = [
-    'HTC-1-M7',
-    'iPhone-6',
-    'Motorola-Droid-Maxx',
-    'Motorola-X',
-    'Samsung-Galaxy-S4',
-    'iPhone-4s',
-    'LG-Nexus-5x',
-    'Motorola-Nexus-6',
-    'Samsung-Galaxy-Note3',
-    'Sony-NEX-7']
+    'realme'
+    'iPhone'
+    'Samsung-Galaxy'
+         ]
 
-cameras = [
+cameras =[
     {
-        'name': 'HTC-1-M7',
-        'models': ['HTC6500LVW*', 'HTC One*'],
-        'software': [None],
-        'shapes': [(2688, 1520), (1520, 2688)]
-    },
-    {
-        'name': 'iPhone-4s',
-        'models': ['iPhone 4S'],
+        'name': 'iPhone-',
+        'models': ['iPhone '],
         'software': [str(_) + '*' for _ in range(10)],
         'shapes': [(2448, 3264), (3264, 2448)]
     },
+    
+
     {
-        'name': 'iPhone-6',
-        'models': ['iPhone 6'],
-        'software': [str(_) + '*' for _ in range(10)],
-        'shapes': [(2448, 3264), (3264, 2448)]
-    },
-    {
-        'name': 'LG-Nexus-5x',
-        'models': ['Nexus 5X'],
-        'software': ['bullhead*', 'HDR+*'],
-        'shapes': [(4032, 3024), (3024, 4032)]
-    },
-    {
-        'name': 'Motorola-Droid-Maxx',
-        'models': ['XT1080', 'XT1060', 'XT1030'],
-        'software': [None],
-        'shapes': [(2432, 4320), (4320, 2432)]
-    },
-    {
-        'name': 'Motorola-Nexus-6',
-        'models': ['Nexus 6'],
-        'software': [None, 'HDR+*'],
-        'shapes': [(3120, 4160), (4160, 3120),
-                   (3088, 4160), (4160, 3088)]
-    },
-    {
-        'name': 'Motorola-X',
-        'models': ['XT1085', 'XT1092', 'XT1093', 'XT1094',
-                   'XT1095', 'XT1096', 'XT1097', 'XT1090', 'XT1091', 'XT1098', 'XT1099',
-                   'XT1052', 'XT1053', 'XT1056', 'XT1058'],
-        'software': [None],
-        'shapes': [(3120, 4160), (4160, 3120),
-                   (2340, 4160), (4160, 2340), ]
-    },
-    {
-        'name': 'Samsung-Galaxy-Note3',
+        'name': 'Samsung-Galaxy',
         'models': ['SAMSUNG-SM-N900A*', 'SM-N900*'],
         'software': ['N900*'],
         'shapes': [(2322, 4128), (4128, 2322),
                    (3096, 4128), (4128, 3096)]
     },
-    {
-        'name': 'Samsung-Galaxy-S4',
-        'models': ['SCH-I545*', 'GT-I9505*'],
-        'software': ['I9505*', 'I545*'],
-        'shapes': [(2322, 4128), (4128, 2322)]
-    },
-    {
-        'name': 'Sony-NEX-7',
-        'models': ['NEX-7*'],
-        'software': ['NEX-7 v*'],
-        'shapes': [(4000, 6000), (6000, 4000)]
-    }
+    
 ]
 
 SOURCES = ['merge']
