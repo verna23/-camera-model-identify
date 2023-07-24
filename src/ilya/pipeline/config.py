@@ -1,6 +1,7 @@
+
 import multiprocessing
 
-MODELS = [
+ MODELS = [
     'densenet201_d4',
     'dpn92',
     'densenet201',
