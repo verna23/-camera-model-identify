@@ -13,7 +13,7 @@ from .utils import *
 from .mytransforms import OpenCVRandomD4
 
 
-class IEEECameraDataset(Dataset):
+class CameraDataset(Dataset):
     def __init__(self, items, crop_size, verbose=False, training=True, d4=False):
         self.training = training
         self.items = items
@@ -50,8 +50,8 @@ RESOLUTIONS = {
     4: [[4128, 2322]],  # no flips
     5: [[3264, 2448]],  # no flips
     6: [[3024, 4032]],  # flips
-    7: [[1040, 780],  # Motorola-Nexus-6 no flips
-        [3088, 4130], [3120, 4160]],  # Motorola-Nexus-6 flips
+    7: [[1040, 780],  # 
+        [3088, 4130], [3120, 4160]],  
     8: [[4128, 2322]],  # no flips
     9: [[6000, 4000]],  # no flips
 }
