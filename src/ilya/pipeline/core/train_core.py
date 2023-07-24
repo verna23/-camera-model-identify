@@ -12,7 +12,7 @@ from torch.utils.data import DataLoader, sampler
 
 from . import utils
 from . import train_utils
-from .custom_dataset import IEEECameraDataset
+from .custom_dataset import CameraDataset
 from .custom_scheduler import ReduceLROnPlateau
 from .validation_dataset import ValidationDataset
 from .. import config
@@ -33,7 +33,7 @@ def run_training(model_name, model, ids_train, ids_val,
     weights = [class_w[i_class] for i_class in classes_train]
     weights = torch.DoubleTensor(weights)
     train_sampler = sampler.WeightedRandomSampler(weights, steps_per_epoch * batch_size)
-    train_dataset = IEEECameraDataset(ids_train, crop_size=config.CROP_SIZE, training=True, d4=use_d4)
+    train_dataset = CameraDataset(ids_train, crop_size=config.CROP_SIZE, training=True, d4=use_d4)
 
     val_dataset_unalt = ValidationDataset(ids_val, crop_size=config.CROP_SIZE, mode='unalt')
     val_dataset_manip = ValidationDataset(ids_val, crop_size=config.CROP_SIZE, mode='manip')
@@ -58,8 +58,8 @@ def run_training(model_name, model, ids_train, ids_val,
 
 
 def load_train_ids(use_pseudo):
-    kaggle_train_meta = pd.read_csv(config.TABLES_DIR + '/kaggle_train_meta.csv')
-    kaggle_train_meta = kaggle_train_meta[kaggle_train_meta['fold_id'] != 0]
+    _train_meta = pd.read_csv(config.TABLES_DIR + '_train_meta.csv')
+    _train_meta = _train_meta[_train_meta['fold_id'] != 0]
     ids_train = list(pd.read_csv(config.TABLES_DIR + '/cleaner.csv')['fns']) \
                 + list(kaggle_train_meta['filename'])
     if use_pseudo:
