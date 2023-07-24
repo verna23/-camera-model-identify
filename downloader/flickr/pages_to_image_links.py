@@ -10,7 +10,7 @@ import os
 folders = os.listdir('html_pages')
 
 for i in folders:
-    right_links = []
+   right_links = []
 
     for page in os.listdir('html_pages/' + i):
         file = open('html_pages/'+i+'/'+page, 'r')
